@@ -123,12 +123,12 @@ def logActivity(status) :
     # Trim the log file such that it contains only the last 1000 records
 
     # Read in all the lines of logs
-    with open('../logs/status.log', 'r') as log_file:
+    with open('logs/status.log', 'r') as log_file:
         past_records = log_file.readlines()
     # Trim the logs such that it will now contain only the last 1000 lines
     past_records = past_records[-1000:]
     # Write only these last 1000 records back into the log file
-    with open('../logs/status.log', 'w') as log_file:
+    with open('logs/status.log', 'w') as log_file:
         log_file.writelines(past_records)
 
     # Proceed with appending the current log record
@@ -137,7 +137,7 @@ def logActivity(status) :
     message = str(datetime.datetime.now()) + '\t\t : \t' + status + '\n'
 
     # Append the message to the end of the log file
-    with open('../logs/status.log', 'a') as log_file:
+    with open('logs/status.log', 'a') as log_file:
         log_file.write(message)
 
 
@@ -189,7 +189,7 @@ def storeCurrentCandidateCenters(message) :
     message = str(datetime.datetime.now()) + '\n\n\n' + message + '\n'
 
     # Write the message to the output file
-    with open('../logs/vaccine_centers.txt', 'w') as output_file:
+    with open('logs/vaccine_centers.txt', 'w') as output_file:
         output_file.write(message)
 
 
