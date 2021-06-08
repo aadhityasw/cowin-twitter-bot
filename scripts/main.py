@@ -98,6 +98,7 @@ def parseRawData(response_data) :
                 'num_dose_1' : center['available_capacity_dose1'],
                 'fee' : center['fee'],
                 'vaccine' : center['vaccine'],
+                'date' : center['date'],
                 'min_age' : center['min_age_limit'],
                 'slots' : center['slots']
             }
@@ -117,8 +118,21 @@ def logActivity(status) :
     status - a message string denoting the status of the current execution
     """
 
-    # Prepare the complete status string
-    message = datetime.datetime.now().strftime() + '\t\t : \t' + status + '\n'
+    # Trim the log file such that it contains only the last 1000 records
+
+    # Read in all the lines of logs
+    with open('../logs/status.log', 'r') as log_file:
+        past_records = log_file.readlines()
+    # Trim the logs such that it will now contain only the last 1000 lines
+    past_records = past_records[-1000:]
+    # Write only these last 1000 records back into the log file
+    with open('../logs/status.log', 'w') as log_file:
+        log_file.writelines(past_records)
+
+    # Proceed with appending the current log record
+
+    # Appends the time with this status message
+    message = str(datetime.datetime.now()) + '\t\t : \t' + status + '\n'
 
     # Append the message to the end of the log file
     with open('../logs/status.log', 'a') as log_file:
@@ -126,3 +140,94 @@ def logActivity(status) :
 
 
 
+def prepareAvailableCentersMessage(candidate_centers) :
+    """
+    Given the candidate centers, parses through this data and prepares a string message.
+
+    Parameters
+    ----------
+    candidate-centers - the list of centers which matches with our conditions
+
+    Return
+    ------
+    message - the center's details in a formatted manner for display or any other purpose
+    """
+
+    # Initialize an empty string which will hold the final message
+    message = ""
+
+    # Load in the center details in a formatted manner
+    for i, center in enumerate(candidate_centers) :
+        message += f"{i+1}. {center['name']} :\n"
+        message += f"\tDoses Available : {center['num_dose_1']}\n"
+        message += f"\tFee : {center['fee']}\n"
+        message += f"\tVaccine : {center['vaccine']}\n"
+        message += f"\tAge group : {center['min_age']}+ years\n"
+        message += f"\tDate : {center['date']}\n"
+        message += f"\tSlots : {center['slots'][0]}\n"
+        for j in range(1, len(center['slots'])) :
+            message += f"\t\t\t{center['slots'][j]}\n"
+        message += "---------------------------------\n\n\n"
+    
+    # Return this formatted message
+    return message
+
+
+
+def storeCurrentCandidateCenters(message) :
+    """
+    Given the formatted message containing the center details, prints it in a status file.
+
+    Parameters
+    ----------
+    message - the formatted message with the center details
+    """
+
+    # Adds the current time above the message
+    message = str(datetime.datetime.now()) + '\n\n\n' + message + '\n'
+
+    # Write the message to the output file
+    with open('../logs/vaccine_centers.txt', 'w') as output_file:
+        output_file.write(message)
+
+
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Parent Code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+# Ping the COVIN API requesting a list of all vaccination centers available
+covin_response = pingCovinForInfo()
+
+# Use this to store the log messages
+log_message = ""
+
+# If the response is not None, then proceed
+if covin_response is not None :
+    # log the current status
+    log_message += "COVIN data extracted; "
+
+    # Extract the candidate centers after scutiny of the returned centers
+    candidate_centers = parseRawData(covin_response)
+
+    # Log the number of centers left
+    log_message += f"{len(candidate_centers)} Candidate centers found; "
+
+    # Proceed based on whether any candidates are left after scrutiny
+    if len(candidate_centers) > 0 :
+        # Prepare the message using these candidate centers
+        message = prepareAvailableCentersMessage(candidate_centers)
+
+        # Store these candidate centres in a file
+        storeCurrentCandidateCenters(message)
+
+        # Send Message to the twitter user using tweepy
+
+
+
+
+else :
+    log_message += "Pings to COVIN failed"
+
+# Log this message into the log file
+logActivity(log_message)
