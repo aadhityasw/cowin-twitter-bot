@@ -68,6 +68,8 @@ def pingCovinForInfo() :
     # If successful return the respose else return None
     if 200 <= response.status_code < 300 :
         return response.json()
+    else :
+        print(response.json())
     return None
 
 
