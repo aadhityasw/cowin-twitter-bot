@@ -62,6 +62,8 @@ def pingCovinForInfo() :
 
         if 200 <= response.status_code < 300 :
             break
+
+        pings_left -= 1
     
     # If successful return the respose else return None
     if 200 <= response.status_code < 300 :
