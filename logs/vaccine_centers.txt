@@ -1,4 +1,4 @@
-2021-08-11 08:00:22.134420
+2021-08-11 08:03:56.925815
 
 
 1. RIO CHILDREN HOSPITAL PVT LTD :
@@ -15,7 +15,7 @@
 
 
 2. Apollo Speciality Hospital :
-	Doses Available : 398
+	Doses Available : 396
 	Fee : 780
 	Vaccine : COVISHIELD
 	Age group : 18+ years
