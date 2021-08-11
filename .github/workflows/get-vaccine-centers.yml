@@ -5,8 +5,8 @@ on:
     branches:
       - main
   schedule:
-    # Runs every 5 hours
-    - cron: '* * */5 * *'
+    # Runs every 2 days at 9:00 AM
+    - cron: '0 9 */2 * *'
   workflow_dispatch:
 
 jobs:
