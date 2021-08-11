@@ -100,7 +100,7 @@ def parseRawData(response_data) :
     # Parse through this json data and save the ones which have availability
     for center in response_data['sessions'] :
         if (
-            (center['vaccine'] in os.environ['AVAILABLE_VACCINES']) and #config.AVAILABLE_VACCINES) and
+            (center['vaccine'] in ['COVISHIELD', 'SPUTNIK V']) and
             (center['min_age_limit'] >= 18 ) and 
             (center['available_capacity_dose2'] > 0 )
         ) :
