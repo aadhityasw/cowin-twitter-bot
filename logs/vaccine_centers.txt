@@ -1,4 +1,4 @@
-2021-08-11 12:40:25.908372
+2021-08-11 15:33:59.504075
 
 
 1. MMHRC Session Site :
@@ -15,7 +15,7 @@
 
 
 2. RIO CHILDREN HOSPITAL PVT LTD :
-	Doses Available : 64
+	Doses Available : 61
 	Fee : 780
 	Vaccine : COVISHIELD
 	Age group : 18+ years
