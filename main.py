@@ -1,7 +1,9 @@
 import requests
 import datetime
 import pytz
-from user_agent import generate_user_agent
+import tweepy
+import config
+#from user_agent import generate_user_agent
 
 
 
@@ -51,11 +53,11 @@ def pingCovinForInfo() :
     while pings_left > 0 :
         headers = {
             #"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36"
-            #"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11"
-            "User-Agent": generate_user_agent()
+            "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11"
+            #"User-Agent": generate_user_agent()
         }
         parameters = {
-            'district_id' : "540",
+            'district_id' : config.DISTRICT_ID,
             "date" : getDateOfQuery(),
         }
         response = requests.get(
@@ -97,9 +99,9 @@ def parseRawData(response_data) :
     # Parse through this json data and save the ones which have availability
     for center in response_data['sessions'] :
         if (
-            (center['vaccine'] in ['COVISHIELD', 'SPUTNIK V']) and
-            (center['min_age_limit'] > 44 ) and 
-            (center['available_capacity_dose1'] > 0 )
+            (center['vaccine'] in config.AVAILABLE_VACCINES) and
+            (center['min_age_limit'] >= 18 ) and 
+            (center['available_capacity_dose2'] > 0 )
         ) :
             cur_candidate = {
                 'name' : center['name'],
@@ -140,11 +142,11 @@ def logActivity(status) :
     # Proceed with appending the current log record
 
     # Appends the time with this status message
-    message = str(datetime.datetime.now()) + '\t\t : \t' + status + '\n'
+    status_message = str(datetime.datetime.now()) + '\t\t : \t' + status + '\n'
 
     # Append the message to the end of the log file
     with open('logs/status.log', 'a') as log_file:
-        log_file.write(message)
+        log_file.write(status_message)
 
 
 
@@ -200,6 +202,31 @@ def storeCurrentCandidateCenters(message) :
 
 
 
+def sendTwitterDM(message) :
+    """
+    Given a message, use the tweepy library to send a twitter DM to the user
+
+    Parameters
+    ----------
+    message - the formatted message with the center details
+    """
+
+    # Establish a connection using the Authorization tokens
+    auth = tweepy.OAuthHandler(config.TWITTER_CONSUMER_KEY, config.TWITTER_CONSUMER_SECRET)
+    auth.set_access_token(config.TWITTER_ACCESS_KEY, config.TWITTER_ACCESS_SECRET)
+
+    # Create API handler
+    api = tweepy.API(auth)
+
+    # Get the user-id of the reciever using their twitter username
+    user = api.get_user(config.TWITTER_RECIPIENT_USER_NAME)
+    recipient_id = user.id_str
+
+    # Send a DM
+    api.send_direct_message(recipient_id, message)
+
+
+
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Parent Code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -230,12 +257,13 @@ if covin_response is not None :
         storeCurrentCandidateCenters(message)
 
         # Send Message to the twitter user using tweepy
+        sendTwitterDM(message)
 
-
-
+        # Log the sending of message (Twitter DM)
+        log_message += "Message sent through twitter DM"
 
 else :
-    log_message += "Pings to COVIN failed"
+    log_message += "Pings to COVIN failed;"
 
 # Log this message into the log file
 logActivity(log_message)
