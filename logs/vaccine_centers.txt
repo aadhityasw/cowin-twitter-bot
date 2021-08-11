@@ -1,42 +1,29 @@
-2021-08-11 09:15:05.102957
+2021-08-11 12:40:25.908372
 
 
-1. RIO CHILDREN HOSPITAL PVT LTD :
-	Doses Available : 61
+1. MMHRC Session Site :
+	Doses Available : 3
 	Fee : 780
 	Vaccine : COVISHIELD
 	Age group : 18+ years
-	Date : 11-08-2021
-	Slots : 11:00AM-12:00PM
-			12:00PM-01:00PM
-			01:00PM-02:00PM
-			02:00PM-04:00PM
----------------------------------
-
-
-2. Apollo Speciality Hospital :
-	Doses Available : 391
-	Fee : 780
-	Vaccine : COVISHIELD
-	Age group : 18+ years
-	Date : 11-08-2021
-	Slots : 09:00AM-10:00AM
-			10:00AM-11:00AM
-			11:00AM-12:00PM
-			12:00PM-03:00PM
----------------------------------
-
-
-3. MMHRC Session Site :
-	Doses Available : 0
-	Fee : 780
-	Vaccine : COVISHIELD
-	Age group : 18+ years
-	Date : 11-08-2021
+	Date : 12-08-2021
 	Slots : 09:30AM-10:30AM
 			10:30AM-11:30AM
 			11:30AM-12:30PM
 			12:30PM-05:00PM
+---------------------------------
+
+
+2. RIO CHILDREN HOSPITAL PVT LTD :
+	Doses Available : 64
+	Fee : 780
+	Vaccine : COVISHIELD
+	Age group : 18+ years
+	Date : 12-08-2021
+	Slots : 11:00AM-12:00PM
+			12:00PM-01:00PM
+			01:00PM-02:00PM
+			02:00PM-04:00PM
 ---------------------------------
 
 
