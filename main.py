@@ -2,7 +2,8 @@ import requests
 import datetime
 import pytz
 import tweepy
-import config
+#import config
+import os
 #from user_agent import generate_user_agent
 
 
@@ -57,7 +58,7 @@ def pingCovinForInfo() :
             #"User-Agent": generate_user_agent()
         }
         parameters = {
-            'district_id' : config.DISTRICT_ID,
+            'district_id' : os.environ['DISTRICT_ID'],#config.DISTRICT_ID,
             "date" : getDateOfQuery(),
         }
         response = requests.get(
@@ -99,7 +100,7 @@ def parseRawData(response_data) :
     # Parse through this json data and save the ones which have availability
     for center in response_data['sessions'] :
         if (
-            (center['vaccine'] in config.AVAILABLE_VACCINES) and
+            (center['vaccine'] in os.environ['AVAILABLE_VACCINES']) and #config.AVAILABLE_VACCINES) and
             (center['min_age_limit'] >= 18 ) and 
             (center['available_capacity_dose2'] > 0 )
         ) :
@@ -212,14 +213,16 @@ def sendTwitterDM(message) :
     """
 
     # Establish a connection using the Authorization tokens
-    auth = tweepy.OAuthHandler(config.TWITTER_CONSUMER_KEY, config.TWITTER_CONSUMER_SECRET)
-    auth.set_access_token(config.TWITTER_ACCESS_KEY, config.TWITTER_ACCESS_SECRET)
+    #auth = tweepy.OAuthHandler(config.TWITTER_CONSUMER_KEY, config.TWITTER_CONSUMER_SECRET)
+    #auth.set_access_token(config.TWITTER_ACCESS_KEY, config.TWITTER_ACCESS_SECRET)
+    auth = tweepy.OAuthHandler(os.environ['TWITTER_CONSUMER_KEY'], os.environ['TWITTER_CONSUMER_SECRET'])
+    auth.set_access_token(os.environ['TWITTER_ACCESS_KEY'], os.environ['TWITTER_ACCESS_SECRET'])
 
     # Create API handler
     api = tweepy.API(auth)
 
     # Get the user-id of the reciever using their twitter username
-    user = api.get_user(config.TWITTER_RECIPIENT_USER_NAME)
+    user = api.get_user(os.environ['TWITTER_RECIPIENT_USER_NAME'])
     recipient_id = user.id_str
 
     # Send a DM
