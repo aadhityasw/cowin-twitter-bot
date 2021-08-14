@@ -100,13 +100,14 @@ def parseRawData(response_data) :
     # Parse through this json data and save the ones which have availability
     for center in response_data['sessions'] :
         if (
-            (center['vaccine'] in ['COVISHIELD', 'SPUTNIK V']) and
+            (center['vaccine'] in ['COVISHIELD']) and
             (center['min_age_limit'] >= 18 ) and 
-            (center['available_capacity_dose2'] > 0 )
+            (center['available_capacity'] > 0 )
         ) :
             cur_candidate = {
                 'name' : center['name'],
                 'num_dose_1' : center['available_capacity_dose1'],
+                'num_dose_2' : center['available_capacity_dose2'],
                 'fee' : center['fee'],
                 'vaccine' : center['vaccine'],
                 'date' : center['date'],
@@ -170,7 +171,8 @@ def prepareAvailableCentersMessage(candidate_centers) :
     # Load in the center details in a formatted manner
     for i, center in enumerate(candidate_centers) :
         message += f"{i+1}. {center['name']} :\n"
-        message += f"\tDoses Available : {center['num_dose_1']}\n"
+        message += f"\tDoses Available (Dose 1) : {center['num_dose_1']}\n"
+        message += f"\tDoses Available (Dose 2) : {center['num_dose_2']}\n"
         message += f"\tFee : {center['fee']}\n"
         message += f"\tVaccine : {center['vaccine']}\n"
         message += f"\tAge group : {center['min_age']}+ years\n"
