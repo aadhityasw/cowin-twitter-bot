@@ -1,25 +1,25 @@
-2021-08-13 09:14:48.008425
+2021-08-14 15:42:34.446727
 
 
-1. Vadamalayan Hospital :
-	Doses Available : 0
-	Fee : 1145
-	Vaccine : SPUTNIK V
+1. Apollo Speciality Hospital :
+	Doses Available : 446
+	Fee : 780
+	Vaccine : COVISHIELD
 	Age group : 18+ years
-	Date : 13-08-2021
-	Slots : 10:00AM-11:00AM
+	Date : 15-08-2021
+	Slots : 09:00AM-10:00AM
+			10:00AM-11:00AM
 			11:00AM-12:00PM
-			12:00PM-01:00PM
-			01:00PM-02:00PM
+			12:00PM-02:00PM
 ---------------------------------
 
 
 2. RIO CHILDREN HOSPITAL PVT LTD :
-	Doses Available : 62
+	Doses Available : 75
 	Fee : 780
 	Vaccine : COVISHIELD
 	Age group : 18+ years
-	Date : 13-08-2021
+	Date : 15-08-2021
 	Slots : 11:00AM-12:00PM
 			12:00PM-01:00PM
 			01:00PM-02:00PM
@@ -27,29 +27,16 @@
 ---------------------------------
 
 
-3. MMHRC Session Site :
-	Doses Available : 1
-	Fee : 780
-	Vaccine : COVISHIELD
+3. Vadamalayan Hospital :
+	Doses Available : 0
+	Fee : 1145
+	Vaccine : SPUTNIK V
 	Age group : 18+ years
-	Date : 13-08-2021
-	Slots : 09:00AM-11:00AM
-			11:00AM-01:00PM
-			01:00PM-03:00PM
-			03:00PM-06:00PM
----------------------------------
-
-
-4. Apollo Speciality Hospital :
-	Doses Available : 376
-	Fee : 780
-	Vaccine : COVISHIELD
-	Age group : 18+ years
-	Date : 13-08-2021
-	Slots : 09:00AM-11:00AM
-			11:00AM-01:00PM
-			01:00PM-03:00PM
-			03:00PM-04:00PM
+	Date : 15-08-2021
+	Slots : 10:00AM-11:00AM
+			11:00AM-12:00PM
+			12:00PM-01:00PM
+			01:00PM-02:30PM
 ---------------------------------
 
 
