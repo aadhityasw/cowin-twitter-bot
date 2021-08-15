@@ -2,6 +2,18 @@
 
 **Provides First Hand Real Time Updates on vaccine stats to your palms.**
 
+
+[![Get Current Vaccination Centers](https://github.com/aadhityasw/cowin-twitter-bot/actions/workflows/get-vaccine-centers.yml/badge.svg)](https://github.com/aadhityasw/cowin-twitter-bot/actions/workflows/get-vaccine-centers.yml)
+&emsp;
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
+
+
+<br /> <br />
+
+
+## Description
+
+
 Choose a location, and key in your twitter username to set this up, and it just does the rest for you. 
 This is a simple to use and easy to understand experiment that utilizes the power of a variety of tools and places these pieces correctly to make a powerful bot that automaticallu fetches the vaccine stats in your city and updates you on your preferred time.
 
@@ -150,5 +162,20 @@ We also have a [log file](./logs/status.log) in the `logs` folder, which has a d
 The [vaccine_centers.txt](./logs/vaccine_centers.txt) file in the `logs` folder contains the list of the latest fetched vaccination centers based on our conditions.
 
 
+---
+<br /> <br /> <br />
 
-With this, have a safe and quick hassle-free vaccination experience :).
+
+## Results
+
+Once you have deployed the code, check out your twitter direct message feed, and you would have recieved a message from the account linked with the developer account you registered for, with the details of the vaccination centers and the availablity and timings. You can use this information to register in the COWIN Web portal (for now, as this feature might be added at a later stage 😁).
+
+The following image is a sample of how a sample Twitter DM message looks like :
+
+<p align="center">
+  <img src="./assets/img/sample_twitter_dm.png" >
+</p>
+
+
+
+With this done, have a safe and quick hassle-free vaccination experience 😷.
