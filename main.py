@@ -58,6 +58,9 @@ def pingCovinForInfo() :
             #"User-Agent": generate_user_agent()
         }
         parameters = {
+            # For development
+            #'district_id' : config.DISTRICT_ID,
+            # For Deployment
             'district_id' : os.environ['DISTRICT_ID'],#config.DISTRICT_ID,
             "date" : getDateOfQuery(),
         }
@@ -215,8 +218,10 @@ def sendTwitterDM(message) :
     """
 
     # Establish a connection using the Authorization tokens
+    # For running locally (Development)
     #auth = tweepy.OAuthHandler(config.TWITTER_CONSUMER_KEY, config.TWITTER_CONSUMER_SECRET)
     #auth.set_access_token(config.TWITTER_ACCESS_KEY, config.TWITTER_ACCESS_SECRET)
+    # For Deployment
     auth = tweepy.OAuthHandler(os.environ['TWITTER_CONSUMER_KEY'], os.environ['TWITTER_CONSUMER_SECRET'])
     auth.set_access_token(os.environ['TWITTER_ACCESS_KEY'], os.environ['TWITTER_ACCESS_SECRET'])
 
@@ -224,6 +229,7 @@ def sendTwitterDM(message) :
     api = tweepy.API(auth)
 
     # Get the user-id of the reciever using their twitter username
+    # Replace this with the recipient's username while running locally
     user = api.get_user(os.environ['TWITTER_RECIPIENT_USER_NAME'])
     recipient_id = user.id_str
 
