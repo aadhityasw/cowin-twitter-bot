@@ -1,73 +1,45 @@
-2021-09-03 03:37:53.419056
+2021-09-05 03:37:38.312725
 
 
-1. Vadamalayan Hospital :
-	Doses Available (Dose 1) : 93
-	Doses Available (Dose 2) : 86
+1. RIO CHILDREN HOSPITAL PVT LTD :
+	Doses Available (Dose 1) : 96
+	Doses Available (Dose 2) : 72
 	Fee : 780
 	Vaccine : COVISHIELD
 	Age group : 18+ years
-	Date : 03-09-2021
+	Date : 05-09-2021
+	Slots : 11:00AM-12:00PM
+			12:00PM-01:00PM
+			01:00PM-02:00PM
+			02:00PM-03:00PM
+---------------------------------
+
+
+2. Vadamalayan Hospital :
+	Doses Available (Dose 1) : 88
+	Doses Available (Dose 2) : 74
+	Fee : 780
+	Vaccine : COVISHIELD
+	Age group : 18+ years
+	Date : 05-09-2021
 	Slots : 10:00AM-11:00AM
 			11:00AM-12:00PM
 			12:00PM-01:00PM
-			01:00PM-02:00PM
+			01:00PM-03:00PM
 ---------------------------------
 
 
-2. Velammal :
-	Doses Available (Dose 1) : 20
-	Doses Available (Dose 2) : 20
+3. Apollo Speciality Hospital :
+	Doses Available (Dose 1) : 444
+	Doses Available (Dose 2) : 231
 	Fee : 780
 	Vaccine : COVISHIELD
 	Age group : 18+ years
-	Date : 03-09-2021
-	Slots : 11:00AM-12:00PM
-			12:00PM-01:00PM
-			01:00PM-02:00PM
-			02:00PM-03:00PM
----------------------------------
-
-
-3. RIO CHILDREN HOSPITAL PVT LTD :
-	Doses Available (Dose 1) : 94
-	Doses Available (Dose 2) : 88
-	Fee : 780
-	Vaccine : COVISHIELD
-	Age group : 18+ years
-	Date : 03-09-2021
-	Slots : 11:00AM-12:00PM
-			12:00PM-01:00PM
-			01:00PM-02:00PM
-			02:00PM-03:00PM
----------------------------------
-
-
-4. MMHRC Session Site :
-	Doses Available (Dose 1) : 14
-	Doses Available (Dose 2) : 14
-	Fee : 780
-	Vaccine : COVISHIELD
-	Age group : 18+ years
-	Date : 03-09-2021
-	Slots : 10:00AM-12:00PM
-			12:00PM-02:00PM
-			02:00PM-04:00PM
-			04:00PM-05:00PM
----------------------------------
-
-
-5. Apollo Speciality Hospital :
-	Doses Available (Dose 1) : 438
-	Doses Available (Dose 2) : 218
-	Fee : 780
-	Vaccine : COVISHIELD
-	Age group : 18+ years
-	Date : 03-09-2021
+	Date : 05-09-2021
 	Slots : 09:00AM-10:00AM
 			10:00AM-11:00AM
 			11:00AM-12:00PM
-			12:00PM-03:00PM
+			12:00PM-02:00PM
 ---------------------------------
 
 
