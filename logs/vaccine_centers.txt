@@ -1,27 +1,13 @@
-2021-10-05 03:37:29.616280
+2021-10-07 03:37:34.372598
 
 
-1. RIO CHILDREN HOSPITAL PVT LTD :
-	Doses Available (Dose 1) : 47
-	Doses Available (Dose 2) : 144
-	Fee : 780
-	Vaccine : COVISHIELD
-	Age group : 18+ years
-	Date : 05-10-2021
-	Slots : 11:00AM-12:00PM
-			12:00PM-01:00PM
-			01:00PM-02:00PM
-			02:00PM-03:00PM
----------------------------------
-
-
-2. Velammal :
+1. Velammal :
 	Doses Available (Dose 1) : 20
-	Doses Available (Dose 2) : 20
+	Doses Available (Dose 2) : 19
 	Fee : 780
 	Vaccine : COVISHIELD
 	Age group : 18+ years
-	Date : 05-10-2021
+	Date : 07-10-2021
 	Slots : 11:00AM-12:00PM
 			12:00PM-01:00PM
 			01:00PM-02:00PM
@@ -29,24 +15,27 @@
 ---------------------------------
 
 
-3. Devadoss Hospital :
-	Doses Available (Dose 1) : 18
-	Doses Available (Dose 2) : 15
+2. RIO CHILDREN HOSPITAL PVT LTD :
+	Doses Available (Dose 1) : 46
+	Doses Available (Dose 2) : 137
 	Fee : 780
 	Vaccine : COVISHIELD
 	Age group : 18+ years
-	Date : 05-10-2021
-	Slots : 10:00AM-12:00PM
+	Date : 07-10-2021
+	Slots : 11:00AM-12:00PM
+			12:00PM-01:00PM
+			01:00PM-02:00PM
+			02:00PM-03:00PM
 ---------------------------------
 
 
-4. Apollo Speciality Hospital :
-	Doses Available (Dose 1) : 44
-	Doses Available (Dose 2) : 131
+3. Apollo Speciality Hospital :
+	Doses Available (Dose 1) : 46
+	Doses Available (Dose 2) : 127
 	Fee : 780
 	Vaccine : COVISHIELD
 	Age group : 18+ years
-	Date : 05-10-2021
+	Date : 07-10-2021
 	Slots : 09:00AM-10:00AM
 			10:00AM-11:00AM
 			11:00AM-12:00PM
