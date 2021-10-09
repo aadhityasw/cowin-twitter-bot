@@ -1,45 +1,53 @@
-2021-10-07 03:37:34.372598
+2021-10-09 03:37:31.496270
 
 
-1. Velammal :
-	Doses Available (Dose 1) : 20
-	Doses Available (Dose 2) : 19
+1. Nithilaa Nursing Home :
+	Doses Available (Dose 1) : 27
+	Doses Available (Dose 2) : 20
 	Fee : 780
 	Vaccine : COVISHIELD
 	Age group : 18+ years
-	Date : 07-10-2021
-	Slots : 11:00AM-12:00PM
-			12:00PM-01:00PM
-			01:00PM-02:00PM
-			02:00PM-03:00PM
+	Date : 09-10-2021
+	Slots : 10:00AM-11:00AM
 ---------------------------------
 
 
-2. RIO CHILDREN HOSPITAL PVT LTD :
-	Doses Available (Dose 1) : 46
-	Doses Available (Dose 2) : 137
+2. Apollo Speciality Hospital :
+	Doses Available (Dose 1) : 34
+	Doses Available (Dose 2) : 111
 	Fee : 780
 	Vaccine : COVISHIELD
 	Age group : 18+ years
-	Date : 07-10-2021
-	Slots : 11:00AM-12:00PM
-			12:00PM-01:00PM
-			01:00PM-02:00PM
-			02:00PM-03:00PM
----------------------------------
-
-
-3. Apollo Speciality Hospital :
-	Doses Available (Dose 1) : 46
-	Doses Available (Dose 2) : 127
-	Fee : 780
-	Vaccine : COVISHIELD
-	Age group : 18+ years
-	Date : 07-10-2021
+	Date : 09-10-2021
 	Slots : 09:00AM-10:00AM
 			10:00AM-11:00AM
 			11:00AM-12:00PM
 			12:00PM-03:00PM
+---------------------------------
+
+
+3. RIO CHILDREN HOSPITAL PVT LTD :
+	Doses Available (Dose 1) : 47
+	Doses Available (Dose 2) : 136
+	Fee : 780
+	Vaccine : COVISHIELD
+	Age group : 18+ years
+	Date : 09-10-2021
+	Slots : 11:00AM-12:00PM
+			12:00PM-01:00PM
+			01:00PM-02:00PM
+			02:00PM-03:00PM
+---------------------------------
+
+
+4. Ashwin Speciality Hospital :
+	Doses Available (Dose 1) : 10
+	Doses Available (Dose 2) : 9
+	Fee : 780
+	Vaccine : COVISHIELD
+	Age group : 18+ years
+	Date : 09-10-2021
+	Slots : 10:00AM-12:00PM
 ---------------------------------
 
 
